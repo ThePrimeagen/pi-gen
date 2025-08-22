@@ -1,0 +1,9 @@
+elixir
+erlang
+sqlite3
+libsqlite3-dev
+build-essential
+pkg-config
+git
+curl
+ca-certificates
