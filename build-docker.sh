@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+passwd=$(openssl rand -hex 24)
+sed -i "s/FIRST_USER_PASS=.*/FIRST_USER_PASS='${passwd}'/" config
+
 # Note: Avoid usage of arrays as MacOS users have an older version of bash (v3.x) which does not supports arrays
 set -eu
 
@@ -164,3 +167,5 @@ if [ "${PRESERVE_CONTAINER}" != "1" ]; then
 fi
 
 echo "Done! Your image(s) should be in deploy/"
+
+sed -i "s/FIRST_USER_PASS=.*/FIRST_USER_PASS='asdf'/" config
